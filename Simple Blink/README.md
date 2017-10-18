@@ -1,5 +1,5 @@
-#Simple Blink
-##Objective
+# Simple Blink
+## Objective
 To utilize polling in order to toggle the output of an led onboard at a desired rate.
 ## How
 In order to code an LED to blink on and off, only a few lines of code are required. Initially we must initialize the 

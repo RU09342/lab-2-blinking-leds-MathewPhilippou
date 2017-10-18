@@ -1,11 +1,11 @@
-#Multi Blink
-##Objective
+# Multi Blink
+## Objective
 To work off of the progress made in Part 1 of Lab 2 by toggling two LEDs onboard at different clock rates
 ## How
 In the same fashion as in Simple Blink, we need to initialize the two LEDs as outputs so they may be toggled on 
 and off. For the code: 
 
-                        ###P1DIR |= BIT0;
+                        ### P1DIR |= BIT0;
 
 P1 refers to the pin assignmetn of the specific port on the board, in this case the pin assignmet was one. The 
 right side of this function corresponds to the bit number of the port being used. In order to toggle the leds on and off
