@@ -1,21 +1,19 @@
-# Button Blink
-Now that you have looked at blinking the LED from some built in delay, but what if we wanted to control the state of the LED by a button? You may think "Why would I need a Microcontroller to perform the job of a switch?". And that is where you come in. The bare minimum for this part of the lab is to essentially replicate a switch with your development board.
+#Multi Blink
+##Objective
+To work off of the progress made in Part 1 of Lab 2 by toggling an LED with a an onboard button.
+# How
+We ofourse still need to initialize one of the LED's as an output but for this lab we also need an input that
+will work with the same functionality as a  switch. For this we use an oboard button. In order to initialize it as an 
+input we must use three lines of code:
+###P5DIR&=~BIT5;
+###P5REN|=BIT5;
+###P5OUT|=BIT5;
+(The numbers after P and BIT will change depending)
 
-# YOU NEED TO CREATE THE FOLLOWING FOLDERS
-* MSP430G2553
-* MSP430F5529
-* MSP430FR2311
-* MSP430FR5994
-* MSP430FR6989
+This declares the button as an input that may be toggled. Similar to the previous parts of Lab 2, we must make a 
+never ending while loop. In order to toggle the LED with the button we must create an if else statement. We declare
+that if the input bit, P5, anded with the button bit, BIT5, are not equal to BIT5 then we toggle the LED and use a delay
+to allow it to blink. Inside the else statement we just declare to keep the LED bit always turned off. 
 
-## README
-Remember to replace this README with your README once you are ready to submit. I would recommend either making a copy of this file or taking a screen shot. There might be a copy of all of these README's in a folder on the top level depending on the exercise.
-
-## Extra Work
-What can we do to make this a little bit more worthy of needing a microcontroller.
-
-### Button Based Speed Control
-Much like the UART controlled speed, what if you could cycle between speeds based on a button press? The speed could progress through a cycle of "Off-Slow-Medium-Fast" looping back when you hit the end.
-
-### Color Change
-What if upon a button press, the LED which was blinking changed. Some of the development boards contain two LEDs, so you could swap between a Red and a Green LED.
+For extra credit a button blink was coded on the F5529 that used two LEDs and 2 Buttons. If one button is pressed, the 
+LEDs blink at different rates, if the other is  pressed both LEDs blink together at the same rate.
